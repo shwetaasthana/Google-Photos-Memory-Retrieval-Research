@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Photos - Product Research Intelligence Platform Report</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #1557b0;
+            --bg-main: #f8f9fa;
+            --surface: #ffffff;
+            --text-main: #202124;
+            --text-muted: #5f6368;
+            --border: #dadce0;
+            --accent-blue: #e8f0fe;
+            --accent-green: #e6f4ea;
+            --accent-yellow: #fef7e0;
+            --badge-green: #137333;
+            --badge-blue: #1a73e8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 48px;
+            border: 1px solid var(--border);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 36px;
+        }
+
+        .logo-tag {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #3c4043;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .stat-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f1f3f4;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: var(--accent-green);
+            color: var(--badge-green);
+        }
+
+        .badge-info {
+            background: var(--accent-blue);
+            color: var(--badge-blue);
+        }
+
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+
+        .callout {
+            background-color: var(--accent-blue);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: #174ea6;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="logo-tag">Google Photos PM Assignment</span>
+            <h1>Product Research Intelligence Platform</h1>
+            <p class="subtitle">Dataset Inspection, Survey Structure, Data Dictionary & Unified Schema Report</p>
+        </header>
+
+        <div class="callout">
+            <p><strong>Strict Execution Guidelines Enforced:</strong> All 4 original datasets in <code>/data</code> were inspected in-memory with zero modifications or overwrites to original source files. No research findings or inferences have been invented.</p>
+        </div>
+
+        <h2>1. Executive Summary & Pipeline Statistics</h2>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">2,535</div>
+                <div class="label">Total Normalized Records</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">4</div>
+                <div class="label">Research Datasets</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">0</div>
+                <div class="label">Duplicate Records Identified</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">100%</div>
+                <div class="label">Data Integrity Preserved</div>
+            </div>
+        </div>
+
+        <h2>2. Data Inspection Matrix</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Format</th>
+                    <th>Records</th>
+                    <th>Duplicates</th>
+                    <th>Columns</th>
+                    <th>Primary Source / Origin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>google-play.csv</code></td>
+                    <td>CSV</td>
+                    <td><strong>18</strong></td>
+                    <td><span class="badge badge-success">0</span></td>
+                    <td>13</td>
+                    <td>Google Play Store Reviews (<code>com.google.android.apps.photos</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>reddit.csv</code></td>
+                    <td>CSV</td>
+                    <td><strong>2,490</strong></td>
+                    <td><span class="badge badge-success">0</span></td>
+                    <td>1,732 (JSON)</td>
+                    <td>Reddit Discussions (r/googlephotos, r/insanepeoplefacebook)</td>
+                </tr>
+                <tr>
+                    <td><code>google-search.csv</code></td>
+                    <td>CSV</td>
+                    <td><strong>10</strong></td>
+                    <td><span class="badge badge-success">0</span></td>
+                    <td>13</td>
+                    <td>Google SERP Search Snippets (Apify discovery queries)</td>
+                </tr>
+                <tr>
+                    <td><code>survey.xlsx</code> (<code>survey.csv</code>)</td>
+                    <td>XLSX / CSV</td>
+                    <td><strong>17</strong></td>
+                    <td><span class="badge badge-success">0</span></td>
+                    <td>10</td>
+                    <td>Primary User Survey Responses (Google Forms)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Missing Value Analysis</h2>
+        <ul>
+            <li><strong><code>google-play.csv</code> (18 records)</strong>: <span class="badge badge-success">0% Missing</span> across all 13 columns (<code>appId</code>, <code>appVersion</code>, <code>body</code>, <code>date</code>, <code>helpfulCounts</code>, <code>language</code>, <code>position</code>, <code>rating</code>, <code>reviewId</code>, <code>reviewedIn</code>, <code>reviewer</code>, <code>timestamp</code>, <code>userImage</code>).</li>
+            <li><strong><code>google-search.csv</code> (10 records)</strong>: <code>answersCount</code> (100% null), <code>source</code> (100% null), <code>topAnswer</code> (100% null). All other 10 columns have <strong>0% missing values</strong>.</li>
+            <li><strong><code>survey.xlsx</code> (17 records)</strong>: Q1–Q8 (0% missing). Q9 (Fallback methods): 8 missing (47.1%). Q10 (Incident story): 7 missing (41.2%).</li>
+            <li><strong><code>reddit.csv</code> (2,490 records)</strong>: Core text fields: <code>body</code> (0.1% missing), <code>url</code> (1.4% missing), <code>subredditName</code> (1.4% missing). Item-type conditional fields: <code>title</code> (98.6% missing — populated on posts, null on comments), <code>searchTerm</code> (99.2% missing).</li>
+        </ul>
+
+        <h2>4. Survey Structure Decomposition (`survey.xlsx`)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Q#</th>
+                    <th>Question Text</th>
+                    <th>Response Type</th>
+                    <th>Option Domain / Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Q1</strong></td>
+                    <td><code>Timestamp</code></td>
+                    <td>Timestamp String</td>
+                    <td><code>YYYY/MM/DD hh:mm:ss AM/PM GMT+X</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Q2</strong></td>
+                    <td><code>How often do you use Google Photos?</code></td>
+                    <td>Categorical</td>
+                    <td>Daily, A few times a week, A few times a month, Rarely</td>
+                </tr>
+                <tr>
+                    <td><strong>Q3</strong></td>
+                    <td><code>About how many photos are in your Google Photos library?</code></td>
+                    <td>Categorical</td>
+                    <td>Under 1,000, 1,000 - 5,000, 5,000 - 10,000, Can't Remember</td>
+                </tr>
+                <tr>
+                    <td><strong>Q4</strong></td>
+                    <td><code>Have you ever remembered a photo but struggled to find it...?</code></td>
+                    <td>Categorical</td>
+                    <td>Yes, a few times; Yes, many times</td>
+                </tr>
+                <tr>
+                    <td><strong>Q5</strong></td>
+                    <td><code>What kind of photo were you trying to find?</code></td>
+                    <td>Multi-select Enum (;)</td>
+                    <td>Person photo, Trip/vacation, Document/receipt, Place/restaurant, Screenshot, Medical, Event, Food, Other</td>
+                </tr>
+                <tr>
+                    <td><strong>Q6</strong></td>
+                    <td><code>What did you remember about the photo?</code></td>
+                    <td>Multi-select Enum (;)</td>
+                    <td>Who was in it, Where taken, Around when, What happening, What in photo, Background/Ambience, Nothing specific</td>
+                </tr>
+                <tr>
+                    <td><strong>Q7</strong></td>
+                    <td><code>How did you try to find it?</code></td>
+                    <td>Multi-select Enum (;)</td>
+                    <td>Search by words, person, place, date, object, Check album, Couldn't find it</td>
+                </tr>
+                <tr>
+                    <td><strong>Q8</strong></td>
+                    <td><code>Did Google Photos show what you were looking for?</code></td>
+                    <td>Categorical</td>
+                    <td>Yes, Sometimes, No, I got too many unrelated photos</td>
+                </tr>
+                <tr>
+                    <td><strong>Q9</strong></td>
+                    <td><code>What other way would you choose to find a photo...</code></td>
+                    <td>Open Text (Optional)</td>
+                    <td>Qualitative workaround descriptions (scrolling, drive, asking friends)</td>
+                </tr>
+                <tr>
+                    <td><strong>Q10</strong></td>
+                    <td><code>Tell us about a photo you couldn't find easily.</code></td>
+                    <td>Open Text (Optional)</td>
+                    <td>Free-form qualitative user incident narratives</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>5. Unified Normalized Schema Definition</h2>
+        <div class="code-block">
+interface UnifiedResearchRecord {
+  record_id: string;              // Standardized ID (e.g. play_5588dac1, reddit_pcjqs33, survey_1)
+  source_type: 'play_store' | 'reddit' | 'google_search' | 'user_survey';
+  source_url?: string;            // Direct URL link
+  created_at?: string;            // Standardized ISO date string
+  user_identifier?: string;       // Anonymized author or reviewer ID
+  
+  primary_text: string;           // Review body, Reddit text, snippet, or Survey story
+  secondary_text?: string;        // Title, SERP title, or Fallback description
+  search_query_used?: string;     // Explicit search query or prompt
+  rating_score?: number;          // Play Store rating (1-5) or Reddit score
+  
+  // Structured Survey Attributes
+  usage_frequency?: string;
+  library_size?: string;
+  struggle_frequency?: string;
+  survey_photo_types?: string[];
+  survey_memory_cues?: string[];
+  survey_search_methods?: string[];
+  survey_outcome?: string[];
+
+  // Taxonomy Tagging Fields
+  taxonomy: {
+    what_users_remember: string[];
+    what_users_forget: string[];
+    search_behavior: string[];
+    retrieval_barriers: string[];
+    photo_content_type: string[];
+    user_scenario: string[];
+    problem_cluster: string[];
+  };
+}
+        </div>
+
+        <h2>6. Taxonomy Framework Specification (7 PM Dimensions)</h2>
+        <h3>1. What Users Remember (`what_users_remember`)</h3>
+        <p><code>person_who</code>, <code>location_where</code>, <code>time_approximate</code>, <code>event_activity</code>, <code>object_visual_detail</code>, <code>background_ambience</code>, <code>unstructured_memory</code></p>
+
+        <h3>2. What Users Forget (`what_users_forget`)</h3>
+        <p><code>exact_date</code>, <code>exact_keywords</code>, <code>album_association</code>, <code>filename_folder_path</code></p>
+
+        <h3>3. Search Behavior (`search_behavior`)</h3>
+        <p><code>keyword_search</code>, <code>person_face_filter</code>, <code>date_chronological_scroll</code>, <code>album_folder_browse</code>, <code>ai_natural_language</code>, <code>external_fallback</code></p>
+
+        <h3>4. Retrieval Barriers (`retrieval_barriers`)</h3>
+        <p><code>unrelated_search_results</code>, <code>chronological_date_reset</code>, <code>disappearing_photos</code>, <code>duplicate_sprawl</code>, <code>loose_unorganized_photos</code>, <code>media_picker_broken</code></p>
+
+        <h3>5. Photo / Content Type (`photo_content_type`)</h3>
+        <p><code>portrait_person</code>, <code>travel_vacation</code>, <code>document_receipt</code>, <code>medical_prescription</code>, <code>screenshot</code>, <code>pet_animal</code></p>
+
+        <h3>6. User Scenario (`user_scenario`)</h3>
+        <p><code>urgent_practical_need</code>, <code>emotional_reminiscing</code>, <code>photo_sharing_export</code>, <code>library_maintenance</code></p>
+
+        <h3>7. Problem Cluster (`problem_cluster`)</h3>
+        <p><code>cluster_1_search_precision</code>, <code>cluster_2_sorting_organization</code>, <code>cluster_3_sync_restore_loss</code>, <code>cluster_4_editing_workflow</code>, <code>cluster_5_storage_deduplication</code></p>
+
+        <footer>
+            Google Photos Product Research Intelligence Platform &bull; Generated for Google Photos PM Assignment
+        </footer>
+    </div>
+</body>
+</html>
